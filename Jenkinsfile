@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out your project repository
-                git 'https://github.com/HimadriSingha/buildfile.git'
+                git branch: 'main', url: 'https://github.com/HimadriSingha/buildfile.git'
             }
         }
 
