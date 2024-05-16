@@ -9,27 +9,12 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js and npm
-                sh 'curl -sL https://rpm.nodesource.com/setup_16.x'
-                sh 'sudo yum install -y nodejs'
-
-                // Install Yarn (if needed)
-                sh 'sudo curl -sL https://dl.yarnpkg.com/rpm/yarn.repo -o /etc/yum.repos.d/yarn.repo'
-                sh 'sudo yum install -y yarn'
-            }
-        }
-
 
         stage('Deploy') {
             steps {
-                // Install serve globally (if not installed)
-                sh 'sudo npm install -g serve'
-
                 // Serve the built files using serve
-                dir('buildfile/build') {
-                    sh 'serve -s .'
+                dir('buildfile') {
+                    sh 'serve -s build'
                 }
             }
         }
