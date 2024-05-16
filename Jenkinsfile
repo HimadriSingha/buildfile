@@ -29,7 +29,7 @@ pipeline {
 
                 // Serve the built files using serve
                 dir('buildfile/build') {
-                    sh 'serve -s build/'
+                    sh 'serve -s .'
                 }
             }
         }
