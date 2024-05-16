@@ -12,7 +12,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install Node.js and npm
-                sh 'curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -'
+                sh 'curl -sL https://rpm.nodesource.com/setup_16.x'
                 sh 'sudo yum install -y nodejs'
 
                 // Install Yarn (if needed)
